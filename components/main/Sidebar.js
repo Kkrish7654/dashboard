@@ -23,18 +23,29 @@ const analytics = [
 ];
 
 const createReports = [
-    {title:'demo', path:'#'}    
+    {title:'Role Management', path:'#'},
+    {title:'Coupon Management', path:'#'},  
+    {title:'Crashes & Reports', path:'#'},  
+
 ]
 const documentations = [
-    {title:'demo', path:'#'}    
+    {title:'Update Subscription Plans', path:'#'}, 
+    {title:'Add News Update', path:'#'}, 
+    {title:'All News', path:'#'}, 
+    {title:'Currency / Open / Close', path:'#'}, 
+    {title:'Future Forecast', path:'#'}, 
+    {title:'Create Invoice', path:'#'}, 
+    {title:'View All Invoice', path:'#'}, 
 ]
 const settings = [
-    {title:'demo', path:'#'}    
+    {title:'Callback Requests', path:'#'}    
 ]
 const alerts = [
-    {title:'demo', path:'#'}    
+    {title:'Expected Range Email Shooter', path:'#'},   
+    {title:'Business Proposal Shooter', path:'#'},   
+    {title:'Set Rate Alert', path:'#'},   
 ]
-const Accordion = ({ headers, items }) => {
+const Accordion = ({ headers, items, icon }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -45,9 +56,10 @@ const Accordion = ({ headers, items }) => {
     <div className="p-2">
       <button
         style={{color:'#878788'}}
-        className="flex items-start font-bold justify-between w-full p-3 rounded-md"
+        className="flex items-start font-bold justify-start gap-2 w-full p-3 rounded-md"
         onClick={toggleAccordion}
       >
+        <img className="w-6" src={icon} alt="icon"/>
         <span>{headers}</span>
         <svg
           className={`transition-transform duration-300 transform ${
@@ -88,12 +100,18 @@ export const Sidebar = () => {
             <img className="w-5 h-5" src="./dashboard.png" alt='icon'/>
             <span className="text-md font-bold" style={{color:'#0099FB'}}>DASHBOARD</span>
         </button>
-      <Accordion headers="USERS" items={users} />
-      <Accordion headers="ANALYTICS" items={analytics} />
-      <Accordion headers="CREATE REPORTS" items={createReports} />
-      <Accordion headers="DOCUMENTATIONS" items={documentations} />
-      <Accordion headers="SETTINGS" items={settings} />
-      <Accordion headers="ALERTS" items={alerts} />
+      <Accordion headers="USERS" items={users} icon="group.png" />
+      <Accordion headers="ANALYTICS" items={analytics} icon="stats.png" />
+      <Accordion headers="CREATE REPORTS" items={createReports} icon="file.png" />
+      <Accordion headers="DOCUMENTATIONS" items={documentations} icon="writing.png"/>
+      <Accordion headers="SETTINGS" items={settings} icon="setting.png"/>
+      <Accordion headers="ALERTS" items={alerts} icon="warning.png" />
+
+      <div className="w-full flex items-center justify-center">
+        <button style={{background:'#007AFF'}} className="px-6 py-2 w-full m-6 bg-blue-400 rounded-md text-white shadow-md text-xl font-semibold">
+          LOGOUT
+        </button>
+      </div>
     </Fragment>
   );
 };

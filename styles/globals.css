@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;800&family=Poppins:wght@200;400;600&family=Space+Mono&display=swap');
+
+html{
+    font-family:'Montserrat', sans-serif;
+}

@@ -38,11 +38,11 @@ export const ChartGraph = () => {
               options={state.options}
               series={state.series}
               type="line"
-              width={600}
+              width="100%"
             />
           )}
         </div>
-        <div className="flex flex-col items-center justify-start mt-4 p-2">
+        <div className="flex flex-col items-center justify-start mt-4 p-2 w-[40%]">
           <div className="flex items-center gap-4">
             <img src="./apple.png" alt="icon"/>
             <img src="./android.png" alt="icon"/>

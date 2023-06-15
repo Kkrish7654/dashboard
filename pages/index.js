@@ -1,6 +1,7 @@
 
 
 import { ChartGraph } from '@/components/cards/Chart';
+import RenewalCard from '@/components/cards/RenewalCard';
 import SalesCard from '@/components/cards/SalesCard';
 import Table from '@/components/cards/Table';
 import { Sidebar } from '@/components/main/Sidebar';
@@ -9,7 +10,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <main className="grid grid-cols-1 md:grid-cols-5 gap-3 p-5" style={{fontFamily:'Montserrat, sans-serif'}}>
+    <main className="grid grid-cols-1 md:grid-cols-5 gap-3 p-5">
       <section className="side_bar bg-white col-span-1 h-200">
         <Sidebar/>
       </section>
@@ -23,6 +24,7 @@ const Home = () => {
         <div className='grid grid-cols-3 gap-4'>
           <SalesCard price="16,58,000" text="Last Month Sales" gold={4} platinum={15} titanium={12} image="./money.png"/>
           <SalesCard price="20,00,000" text="Upcoming Renewals" gold={4} platinum={15} titanium={12} image="./next-week.png"/>
+          <RenewalCard/>
         </div>
       </section>
     </main>

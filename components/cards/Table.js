@@ -13,12 +13,12 @@ const Table = ({title, dateType, bottomText}) => {
     <div className='p-4 w-full bg-white shadow-md '>
     <h4 className='pb-3 font-bold text-black'>{title}</h4>
     <table className="min-w-full ">
-      <thead className="" style={{background:'#0099FB', color:'#FFFFFF'}}>
+      <thead className="w-full" style={{background:'#0099FB', color:'#FFFFFF'}}>
         <tr>
           <th className="py-3 px-4 text-left">Name</th>
           <th className="py-3 px-4 text-left">Phone</th>
-            <th className="py-3 px-4 text-left w-full">{dateType}</th>
-          <th className="py-3 px-4"></th>
+            <th className="py-3 px-6 text-left w-full">{dateType}</th>
+          <th className=""></th>
         </tr>
       </thead>
       <tbody className="bg-white divide-y divide-gray-200">
@@ -34,7 +34,10 @@ const Table = ({title, dateType, bottomText}) => {
         ))}
       </tbody>
     </table>
-    <button className='px-12 py-1 m-3 text-xs rounded-sm text-white' style={{background:'#0099FB'}}>{bottomText}</button>
+    <button className='px-12 flex gap-2 py-2 items-center m-3 text-xs rounded-sm text-white' style={{background:'#0099FB'}}>
+      <h4>{bottomText}</h4>
+      <img src="right-arrow.png" alt='icon'/>
+    </button>
     </div>
   );
 };
